@@ -66,31 +66,26 @@
         // Hiển thị thông tin dựa trên ID nhân vật
         if (characterId === 'haibatrung') {
             document.getElementById('characterName').textContent = 'Hai Bà Trưng';
-            document.getElementById('characterImage').src = 'assets/images/haibatrung.jpg';
+            document.getElementById('characterImage').src = '/SuKyDatViet/assets/images/haibatrung.jpg';
             document.getElementById('characterDescription').textContent = 
-                'Hai Bà Trưng, chị là Trưng Trắc và  em là Trưng Nhị  con gái của Lạc tướng Mê Linh, xuất thân từ một gia đình quý tộc có truyền thống thượng võ và nông nghiệp tại Mê Linh, Vĩnh Phúc. Sinh năm Giáp Tuất (14 sau Công Nguyên), họ được giáo dục khắt khe về đạo đức và chiến đấu, tạo nền tảng vững chắc cho sứ mệnh lãnh đạo dân tộc sau này. Trưng Trắc, chị cả, kết hôn với Thi Sách, con trai của Lạc tướng ở huyện Chu Diên. Cuộc sống êm đềm của họ bị phá vỡ khi Thi Sách bị Tô Định, thái thú Đông Hán, sát hại. Sự kiện này đã châm ngòi cho lòng thù hận và quyết tâm kháng chiến của cả hai, đánh thức lòng yêu nước trong nhân dân. 
-                Hai Bà Trưng lớn lên trong môi trường giàu ảnh hưởng chính trị và chiến tranh, được mẹ dạy dỗ về lòng yêu nước và khát vọng công lý. Họ tham gia vào các hoạt động địa phương, hiểu rõ cuộc sống của người dân và nỗi khổ dưới triều đại nhà Hán. Với khả năng chiến đấu bẩm sinh, được rèn luyện từ nhỏ và tích lũy kinh nghiệm thực tế, hai bà đã nhanh chóng trở thành những lãnh đạo xuất sắc, biết điều động quân đội và tập hợp nhân dân để hướng tới mục tiêu chung là đánh đuổi quân xâm lược. Trong hành trình trưởng thành, họ cũng kết giao với nhiều tướng lĩnh, tạo ra mạng lưới hỗ trợ mạnh mẽ trong những thời điểm khó khăn.
-';
-            document.getElementById('characterAudio').src = 'assets/audio/haibatrung.mp3';
+                'Hai Bà Trưng, chị là Trưng Trắc và em là Trưng Nhị, con gái của Lạc tướng Mê Linh...';
+            document.getElementById('characterAudio').src = '/SuKyDatViet/assets/audio/haibatrung.mp3';
             document.getElementById('characterVideo').style.display = 'block';
-            document.getElementById('videoSource').src = 'assets/video/haibatrung_video.mp4'; // Kiểm tra tệp video có tồn tại không
+            document.getElementById('videoSource').src = '/SuKyDatViet/assets/video/haibatrung_video.mp4';
 
         } else if (characterId === 'ngquyen') {
             document.getElementById('characterName').textContent = 'Ngô Quyền';
-            document.getElementById('characterImage').src = 'assets/images/ngquyen.jpg';
+            document.getElementById('characterImage').src = '/SuKyDatViet/assets/images/ngquyen.jpg';
             document.getElementById('characterDescription').textContent = 
-                'Ngô Quyền sinh ngày 12 tháng 3 năm 898 tại Đường Lâm, Ba Vì (Hà Tây), con trai của Ngô Mân, một hào trưởng tài đức. Với trí tuệ thông minh và tài năng văn võ song toàn, Ngô Quyền đã được Dương Đình Nghệ gả con gái là Dương Thị Ngọc và giao cho cai quản đất Ái Châu (Thanh Hóa). Khi nhà Nam Hán do Vạn Vương Hoằng Thao xâm lược, Ngô Quyền đã nhanh chóng tập hợp lực lượng, tiêu diệt tên phản bội Kiêu Công Tiễn và chuẩn bị đánh quân xâm lược. 
-                Để giành chiến thắng trước quân Nam Hán, Ngô Quyền đã vận dụng mưu lược khéo léo, lợi dụng thủy triều để thiết lập trận địa cọc nhọn bịt sắt cắm xuống lòng sông Bạch Đằng. Khi chiến thuyền của giặc tiến vào, quân ta đã nhử giặc vượt qua trận địa, rồi chờ cho thủy triều xuống, bất ngờ tấn công từ hai bên bờ sông, khiến thuyền giặc hoảng loạn va vào cọc nhọn bịt sắt và bị đắm gần hết. Thái tử Hoằng Thao cũng đã phải bỏ mạng trong trận chiến. 
-                Sau chiến thắng lẫy lừng trên sông Bạch Đằng, Ngô Quyền lên ngôi vua, đóng đô ở Cổ Loa (Hà Nội), khởi đầu một kỷ nguyên độc lập, tự chủ cho dân tộc. Ngô Quyền trị vì từ năm 939 cho đến khi qua đời vào năm 944, để lại dấu ấn sâu sắc trong lịch sử Việt Nam.
-';
-            document.getElementById('characterAudio').src = 'assets/audio/ngquyen.mp3';
+                'Ngô Quyền sinh ngày 12 tháng 3 năm 898 tại Đường Lâm...';
+            document.getElementById('characterAudio').src = '/SuKyDatViet/assets/audio/ngquyen.mp3';
             document.getElementById('characterVideo').style.display = 'block';
-            document.getElementById('videoSource').src = 'assets/video/ngquyen_video.mp4'; // Kiểm tra tệp video có tồn tại không
+            document.getElementById('videoSource').src = '/SuKyDatViet/assets/video/ngquyen_video.mp4';
         }
 
         // Hàm quay lại trang thư viện nhân vật
         function goBack() {
-            window.location.href = 'index.html'; // Kiểm tra đường dẫn đến trang index.html
+            window.location.href = '/SuKyDatViet/index.html';
         }
 
         // Hàm phát âm thanh
