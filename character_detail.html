@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết Nhân vật - Sử Ký Đất Việt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="goBack()">Quay lại Thư viện Nhân vật</button>
+        <h2 id="characterName">Tên Nhân vật</h2>
+        <img id="characterImage" src="" alt="Hình ảnh nhân vật">
+        <p id="characterDescription">Thông tin chi tiết về nhân vật...</p>
+        
+        <button onclick="playAudio()">Nghe âm thanh</button>
+        <audio id="characterAudio" src=""></audio>
+        
+        <div id="characterVideo" style="display: none;">
+            <h3>Video giới thiệu</h3>
+            <video controls style="width: 100%;">
+                <source id="videoSource" src="" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        // Lấy ID nhân vật từ URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const characterId = urlParams.get('id');
+
+        // Hiển thị thông tin dựa trên ID nhân vật
+        if (characterId === 'haibatrung') {
+            document.getElementById('characterName').textContent = 'Hai Bà Trưng';
+            document.getElementById('characterImage').src = 'Hero/assets/images/haibatrung.jpg';
+            document.getElementById('characterDescription').textContent = 
+                'Hai Bà Trưng, chị là Trưng Trắc và em là Trưng Nhị, con gái của Lạc tướng Mê Linh, xuất thân từ một gia đình quý tộc. Họ lãnh đạo cuộc khởi nghĩa chống lại ách đô hộ của nhà Hán, đánh đuổi quân xâm lược vào năm 40 SCN.';
+            document.getElementById('characterAudio').src = 'Hero/assets/audio/haibatrung.mp3';
+            document.getElementById('characterVideo').style.display = 'block';
+            document.getElementById('videoSource').src = 'Hero/assets/video/haibatrung_video.mp4';
+
+        } else if (characterId === 'ngquyen') {
+            document.getElementById('characterName').textContent = 'Ngô Quyền';
+            document.getElementById('characterImage').src = 'Hero/assets/images/ngquyen.jpg';
+            document.getElementById('characterDescription').textContent = 
+                'Ngô Quyền là vị vua sáng lập nhà Ngô và nổi tiếng với chiến thắng Bạch Đằng năm 938, giúp Việt Nam giành độc lập từ phương Bắc.';
+            document.getElementById('characterAudio').src = 'Hero/assets/audio/ngquyen.mp3';
+        }
+
+        // Hàm quay lại trang thư viện nhân vật
+        function goBack() {
+            window.location.href = 'heroes.html';
+        }
+
+        // Hàm phát âm thanh
+        function playAudio() {
+            const audio = document.getElementById("characterAudio");
+            audio.paused ? audio.play() : audio.pause();
+        }
+    </script>
+</body>
+</html>
