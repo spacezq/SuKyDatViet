@@ -71,7 +71,7 @@
                 'Hai Bà Trưng, chị là Trưng Trắc và em là Trưng Nhị, con gái của Lạc tướng Mê Linh, xuất thân từ một gia đình quý tộc. Họ lãnh đạo cuộc khởi nghĩa chống lại ách đô hộ của nhà Hán, đánh đuổi quân xâm lược vào năm 40 SCN.';
             document.getElementById('characterAudio').src = 'assets/audio/haibatrung.mp3';
             document.getElementById('characterVideo').style.display = 'block';
-            document.getElementById('videoSource').src = 'assets/video/haibatrung_video.mp4';
+            document.getElementById('videoSource').src = 'assets/video/haibatrung_video.mp4'; // Kiểm tra tệp video có tồn tại không
 
         } else if (characterId === 'ngquyen') {
             document.getElementById('characterName').textContent = 'Ngô Quyền';
@@ -79,11 +79,13 @@
             document.getElementById('characterDescription').textContent = 
                 'Ngô Quyền là vị vua sáng lập nhà Ngô và nổi tiếng với chiến thắng Bạch Đằng năm 938, giúp Việt Nam giành độc lập từ phương Bắc.';
             document.getElementById('characterAudio').src = 'assets/audio/ngquyen.mp3';
+            document.getElementById('characterVideo').style.display = 'block';
+            document.getElementById('videoSource').src = 'assets/video/ngquyen_video.mp4'; // Kiểm tra tệp video có tồn tại không
         }
 
         // Hàm quay lại trang thư viện nhân vật
         function goBack() {
-            window.location.href = 'index.html';
+            window.location.href = 'index.html'; // Kiểm tra đường dẫn đến trang index.html
         }
 
         // Hàm phát âm thanh
