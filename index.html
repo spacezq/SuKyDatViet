@@ -59,6 +59,19 @@
         .character-list li:hover::after {
             transform: translateX(5px);
         }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 1em;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -68,11 +81,16 @@
             <li onclick="goToCharacterDetail('haibatrung')">Hai Bà Trưng</li>
             <li onclick="goToCharacterDetail('ngquyen')">Ngô Quyền</li>
         </ul>
+        <button onclick="goToHomepage()">Trang chủ</button>
     </div>
 
     <script>
         function goToCharacterDetail(characterId) {
             window.location.href = '/SuKyDatViet/character_detail.html?id=' + characterId;
+        }
+
+        function goToHomepage() {
+            window.open('https://sukydatvietmau.wordpress.com/', '_blank');
         }
     </script>
 </body>
