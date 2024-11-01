@@ -20,6 +20,7 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Giữ nguyên để định vị nút */
         }
         h1 {
             color: #007BFF;
@@ -30,6 +31,7 @@
         .character-list {
             list-style: none;
             padding: 0;
+            margin: 20px 0; /* Khoảng cách cho danh sách */
         }
         .character-list li {
             padding: 15px;
@@ -59,29 +61,32 @@
         .character-list li:hover::after {
             transform: translateX(5px);
         }
-        button {
+        .home-button {
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             background-color: #007bff;
             color: white;
             cursor: pointer;
-            margin-top: 20px;
-            font-size: 1em;
+            position: absolute; /* Định vị nút */
+            top: 20px; /* Khoảng cách từ trên cùng */
+            left: 20px; /* Khoảng cách từ bên trái */
+            font-size: 1em; /* Kích thước chữ */
+            transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
         }
-        button:hover {
-            background-color: #0056b3;
+        .home-button:hover {
+            background-color: #0056b3; /* Màu khi hover */
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <button class="home-button" onclick="goToHomepage()">Trang chủ</button>
         <h1>Nhân vật Lịch sử</h1>
         <ul class="character-list">
             <li onclick="goToCharacterDetail('haibatrung')">Hai Bà Trưng</li>
             <li onclick="goToCharacterDetail('ngquyen')">Ngô Quyền</li>
         </ul>
-        <button onclick="goToHomepage()">Trang chủ</button>
     </div>
 
     <script>
@@ -90,7 +95,7 @@
         }
 
         function goToHomepage() {
-            window.open('https://sukydatvietmau.wordpress.com/', '_blank');
+            window.location.href = 'https://sukydatvietmau.wordpress.com/'; // Quay lại trang chủ mà không mở tab mới
         }
     </script>
 </body>
