@@ -37,18 +37,11 @@
         button:hover {
             background-color: #0056b3;
         }
-        .home-button {
-            background-color: #28a745;
-        }
-        .home-button:hover {
-            background-color: #218838;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <button onclick="goBack()">Quay lại Thư viện Nhân vật</button>
-        <button class="home-button" onclick="goHome()">Trang chủ</button>
         <h2 id="characterName">Tên Nhân vật</h2>
         <img id="characterImage" src="" alt="Hình ảnh nhân vật">
         <p id="characterDescription">Thông tin chi tiết về nhân vật...</p>
@@ -93,11 +86,6 @@
         // Hàm quay lại trang thư viện nhân vật
         function goBack() {
             window.location.href = '/SuKyDatViet/index.html';
-        }
-
-        // Hàm quay về trang chủ
-        function goHome() {
-            window.location.href = 'https://sukydatvietmau.wordpress.com/';
         }
 
         // Hàm phát âm thanh
