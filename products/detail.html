@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết Sản phẩm - Sử Ký Đất Việt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Header -->
+    <header class="bg-black text-gray-200 p-3 flex justify-between items-center">
+        <h1 class="text-lg font-bold text-green-500">Chi tiết Sản phẩm</h1>
+        <a href="index.html" class="hover:text-orange-400">Quay lại Sản phẩm</a>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <img id="productImage" src="" alt="Product Image" class="rounded">
+            <div>
+                <h1 id="productName" class="text-3xl font-bold text-orange-500"></h1>
+                <p id="productDescription" class="text-gray-400 my-4"></p>
+                <p id="productPrice" class="text-2xl font-bold text-green-400"></p>
+                <button id="addToCartButton" 
+                        class="bg-green-500 px-4 py-2 rounded text-white hover:bg-green-600 mt-4">
+                    Thêm vào giỏ hàng
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        fetch('products.json')
+            .then(response => response.json())
+            .then(data => {
+                const product = data.find(p => p.id === productId);
+                document.getElementById('productName').textContent = product.name;
+                document.getElementById('productImage').src = product.image;
+                document.getElementById('productDescription').textContent = product.description;
+                document.getElementById('productPrice').textContent = product.price + ' VNĐ';
+                document.getElementById('addToCartButton').onclick = () => addToCart(product.id);
+            });
+
+        function addToCart(productId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Đã thêm sản phẩm vào giỏ hàng!');
+        }
+    </script>
+</body>
+</html>

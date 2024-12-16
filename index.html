@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử Ký Đất Việt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> <!-- Thêm Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"> <!-- Thêm Swiper CSS -->
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Top Header -->
+    <header class="bg-black text-gray-200 p-3 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+            <img src="assets/logo-company.jpg"alt="Company Logo" class="w-10 h-10 rounded-full">
+            <span class="font-bold text-lg text-green-500">Sử Ký <span class="text-white">Đất Việt</span></span>
+        </div>
+        <!-- <a href="#" class="bg-green-600 px-3 py-1 text-white rounded hover:bg-green-700">Buy Now</a> --> <!-- Đã comment lại -->
+    </header>
+
+    <!-- Navbar -->
+    <nav class="bg-black text-gray-200 p-3 flex justify-between items-center">
+        <div class="flex gap-4 items-center">
+            <a href="#home-introduction" class="hover:text-orange-400">Trang chủ</a> <!-- Gộp Home và Giới thiệu -->
+            <a href="questions/index.html" class="hover:text-orange-400">Thư viện câu hỏi</a>
+            <a href="characters/index.html" class="hover:text-orange-400">Nhân vật lịch sử</a>
+            <a href="sanpham.html" class="hover:text-orange-400">Sản phẩm</a>
+        </div>
+        <div>
+            <!-- <span class="text-white cursor-pointer">&#9776;</span> -->
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home-introduction" class="relative h-60 bg-cover bg-center" style="background-image: url('SuKyDatViet/assets/H1.png');">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <h1 class="text-4xl font-bold text-orange-500">Sử Ký Đất Việt</h1>
+        </div>
+    </section>
+    
+    
+
+    <!-- Giới thiệu Section -->
+    <section id="introduction" class="bg-gray-800 py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-orange-500">Giới Thiệu</h2>
+            <p class="text-gray-400 mt-4">
+                Trò chơi giáo dục *Sử Ký Đất Việt* giúp bạn khám phá lịch sử Việt Nam thông qua các câu hỏi, nhân vật lịch sử, 
+                và các phần thưởng hấp dẫn. Hãy tham gia để vừa học vừa chơi một cách thú vị!
+            </p>
+        </div>
+    </section>
+
+    <!-- Image Slider -->
+    <section id="slider" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="https://via.placeholder.com/1280x400" alt="Slide 1" class="w-full">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://via.placeholder.com/1280x400" alt="Slide 2" class="w-full">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://via.placeholder.com/1280x400" alt="Slide 3" class="w-full">
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tin tức Section -->
+    <section id="news" class="bg-gray-900 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-orange-500 text-center">Tin tức mới nhất</h2>
+            <p class="text-gray-400 text-center mt-4">
+                Theo dõi các cập nhật mới nhất về trò chơi và thông tin lịch sử!
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <!-- News Item 1 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://via.placeholder.com/300" alt="Update Image" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-orange-400">Cập nhật trò chơi</h3>
+                        <p class="text-gray-400 text-sm mt-2">
+                            Phiên bản mới đã được ra mắt với nhiều câu hỏi và nhân vật mới!
+                        </p>
+                        <a href="#" class="text-green-500 mt-4 inline-block hover:text-green-700">Xem thêm &rsaquo;</a>
+                    </div>
+                </div>
+                <!-- News Item 2 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://via.placeholder.com/300" alt="Update Image" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-orange-400">Nhân vật lịch sử mới</h3>
+                        <p class="text-gray-400 text-sm mt-2">
+                            Thêm 5 nhân vật lịch sử quan trọng vào trò chơi. Hãy tìm hiểu ngay!
+                        </p>
+                        <a href="#" class="text-green-500 mt-4 inline-block hover:text-green-700">Xem thêm &rsaquo;</a>
+                    </div>
+                </div>
+                <!-- News Item 3 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://via.placeholder.com/300" alt="Update Image" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-orange-400">Sự kiện mới</h3>
+                        <p class="text-gray-400 text-sm mt-2">
+                            Tham gia sự kiện đặc biệt để nhận được quà tặng hấp dẫn!
+                        </p>
+                        <a href="#" class="text-green-500 mt-4 inline-block hover:text-green-700">Xem thêm &rsaquo;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-200 py-4 text-center">
+        <p>&copy; 2024 Sử Ký Đất Việt. All rights reserved.</p>
+    </footer>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+[
+    {
+        "id": "haibatrung",
+        "name": "Hai Bà Trưng",
+        "description": "Hai Bà Trưng, chị là Trưng Trắc và em là Trưng Nhị, con gái của Lạc tướng Mê Linh.",
+        "image": "assets/images/haibatrung.jpg",
+        "audio": "assets/audio/haibatrung.mp3",
+        "video": "assets/video/haibatrung_video.mp4"
+    },
+    {
+        "id": "ngquyen",
+        "name": "Ngô Quyền",
+        "description": "Ngô Quyền sinh ngày 12 tháng 3 năm 898 tại Đường Lâm.",
+        "image": "assets/images/ngquyen.jpg",
+        "audio": "assets/audio/ngquyen.mp3",
+        "video": "assets/video/ngquyen_video.mp4"
+    }
+]

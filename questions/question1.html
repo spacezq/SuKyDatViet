@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử Ký Đất Việt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Header -->
+    <header class="bg-black text-gray-200 p-3 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <img src="../assets/logo-company.jpg" alt="Company Logo" class="w-10 h-10 rounded-full">
+            <span class="font-bold text-lg text-green-500">Sử Ký <span class="text-white">Đất Việt</span></span>
+        </div>
+        <nav>
+            <ul class="flex gap-4">
+                <li><a href="../index.html" class="hover:text-orange-400">Trang chủ</a></li>
+                <li><a href="index.html" class="hover:text-orange-400">Thư viện câu hỏi</a></li>
+                <li><a href="../characters/index.html" class="hover:text-orange-400">Nhân vật lịch sử</a></li>
+                <li><a href="../products/index.html" class="hover:text-orange-400">Sản phẩm</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 bg-gray-800 rounded shadow-lg">
+        <h1 class="text-2xl font-bold text-orange-500 text-center mb-6">Câu hỏi: Ai là vị vua đầu tiên của nhà Lý?</h1>
+        
+        <!-- Audio Control -->
+        <div id="audioControl" class="flex items-center justify-center gap-4 mb-6">
+            <button onclick="toggleAudio()" class="bg-green-500 px-4 py-2 rounded hover:bg-green-600 transition">
+                Phát/Dừng Âm thanh
+            </button>
+            <span id="audioStatus" class="italic">Âm thanh đang tắt</span>
+        </div>
+
+        <!-- Answer Section -->
+        <div class="bg-gray-700 p-4 rounded cursor-pointer hover:bg-orange-500 transition" onclick="toggleContent('answer')">
+            <p class="font-bold">Câu hỏi: Ai là vị vua đầu tiên của nhà Lý?</p>
+        </div>
+        <div id="answer" class="hidden bg-gray-700 p-4 mt-4 rounded">
+            <p><strong>Đáp án:</strong> Lý Thái Tổ (Lý Công Uẩn)</p>
+            <p>Lý Công Uẩn, sau khi lên ngôi lấy niên hiệu là Lý Thái Tổ, là vị hoàng đế đầu tiên của nhà Lý, trị vì từ năm 1009 đến năm 1028.</p>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="flex flex-wrap gap-4 mt-4">
+            <button onclick="toggleContent('info')" class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 transition">
+                Thông tin thêm
+            </button>
+            <button onclick="toggleContent('media')" class="bg-orange-500 px-4 py-2 rounded hover:bg-orange-600 transition">
+                Hình ảnh/Video
+            </button>
+        </div>
+
+        <div id="info" class="hidden bg-gray-700 p-4 mt-4 rounded">
+            <h3 class="text-lg font-bold text-orange-400">Thông tin về nhà Lý</h3>
+            <p>Nhà Lý (1009-1225) là một triều đại phong kiến trong lịch sử Việt Nam, kéo dài 216 năm với 9 đời vua.</p>
+        </div>
+
+        <div id="media" class="hidden bg-gray-700 p-4 mt-4 rounded">
+            <h3 class="text-lg font-bold text-orange-400">Hình ảnh minh họa</h3>
+            <img src="../assets/Tượng_Lý_Thái_Tổ.jpeg" alt="Lý Thái Tổ" class="w-full h-auto rounded mt-4">
+        </div>
+    </div>
+
+    <audio id="backgroundAudio">
+        <source src="../assets/NhaLy.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ phát âm thanh.
+    </audio>
+
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.classList.toggle('hidden');
+        }
+
+        const audio = document.getElementById("backgroundAudio");
+        const audioStatus = document.getElementById("audioStatus");
+
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                audioStatus.textContent = "Âm thanh đang phát";
+            } else {
+                audio.pause();
+                audioStatus.textContent = "Âm thanh đang tắt";
+            }
+        }
+    </script>
+</body>
+</html>
