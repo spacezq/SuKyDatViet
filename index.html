@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử Ký Đất Việt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Top Header -->
+    <header class="bg-black text-gray-200 p-3 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <img src="assets/logo-company.jpg" alt="Company Logo" class="w-10 h-10 rounded-full">
+            <span class="font-bold text-lg text-green-500">Sử Ký <span class="text-white">Đất Việt</span></span>
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="bg-black text-gray-200 p-3 flex justify-between items-center">
+        <div class="flex gap-4 items-center">
+            <a href="#home-introduction" class="hover:text-orange-400">Trang chủ</a>
+            <a href="questions/index.html" class="hover:text-orange-400">Thư viện câu hỏi</a>
+            <a href="characters/index.html" class="hover:text-orange-400">Nhân vật lịch sử</a>
+            <a href="products/index.html" class="hover:text-orange-400">Sản phẩm</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home-slider" class="relative h-60">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <img src="assets/H1.png" alt="Slide 1" class="w-full h-60 object-cover">
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <img src="assets/H2.png" alt="Slide 2" class="w-full h-60 object-cover">
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <img src="assets/H3.png" alt="Slide 3" class="w-full h-60 object-cover">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- Giới thiệu Section -->
+    <section id="introduction" class="bg-gray-800 py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-orange-500">Giới Thiệu</h2>
+            <p class="text-gray-400 mt-4">
+                Trò chơi giáo dục *Sử Ký Đất Việt* giúp bạn khám phá lịch sử Việt Nam thông qua các câu hỏi, nhân vật lịch sử, 
+                và các phần thưởng hấp dẫn. Hãy tham gia để vừa học vừa chơi một cách thú vị!
+            </p>
+        </div>
+    </section>
+
+    <!-- Tin tức Section -->
+    <section id="news" class="bg-gray-900 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-orange-500 text-center">Tin tức mới nhất</h2>
+            <p class="text-gray-400 text-center mt-4">Theo dõi các cập nhật mới nhất về trò chơi và thông tin lịch sử!</p>
+            <div id="newsList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <!-- Các tin tức sẽ được hiển thị động -->
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Lấy danh sách tin tức từ file JSON
+        fetch('news/news.json')
+            .then(response => response.json())
+            .then(newsData => {
+                const newsList = document.getElementById('newsList');
+                newsList.innerHTML = newsData.map(news => `
+                    <div onclick="location.href='${news.link}'" 
+                         class="bg-gray-800 rounded-lg overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition">
+                        <img src="${news.image}" alt="${news.title}" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-orange-400">${news.title}</h3>
+                            <p class="text-gray-400 text-sm mt-2">${news.description.substring(0, 100)}...</p>
+                        </div>
+                    </div>
+                `).join('');
+            });
+    </script>
+    
+    
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-200 py-4 text-center">
+        <p>&copy; 2024 Sử Ký Đất Việt. All rights reserved.</p>
+    </footer>
+
+    <!-- Initialize Swiper -->
+    <script>
+        // Khởi tạo Swiper cho Slider
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: {
+                delay: 3000, // Tự động chuyển slide mỗi 3 giây
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>

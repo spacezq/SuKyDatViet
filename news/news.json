@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Cập nhật trò chơi",
+        "description": "Phiên bản mới đã được ra mắt với nhiều câu hỏi và nhân vật mới!",
+        "image": "assets/news1.jpg",
+        "link": "news/blog1.html"
+    },
+    {
+        "title": "Nhân vật lịch sử mới",
+        "description": "Thêm 5 nhân vật lịch sử quan trọng vào trò chơi. Hãy tìm hiểu ngay!",
+        "image": "assets/news2.jpg",
+        "link": "news/blog2.html"
+    },
+    {
+        "title": "Sự kiện đặc biệt",
+        "description": "Tham gia sự kiện để nhận quà tặng hấp dẫn!",
+        "image": "assets/news3.jpg",
+        "link": "news/blog3.html"
+    }
+]

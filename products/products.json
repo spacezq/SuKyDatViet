@@ -1,0 +1,18 @@
+[
+    {
+        "id": "product1",
+        "name": "Bộ trò chơi Sử Ký Đất Việt",
+        "description": "Bộ trò chơi giáo dục với các câu hỏi lịch sử thú vị.",
+        "price": "300,000",
+        "image": "assets/images/product1.jpg",
+        "category": "game"
+    },
+    {
+        "id": "product2",
+        "name": "Sách Lịch sử Việt Nam",
+        "description": "Cuốn sách cung cấp thông tin chi tiết về lịch sử Việt Nam.",
+        "price": "150,000",
+        "image": "assets/images/product2.jpg",
+        "category": "book"
+    }
+]

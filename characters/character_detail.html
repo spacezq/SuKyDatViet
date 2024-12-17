@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết Nhân vật - Sử Ký Đất Việt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <header class="bg-black text-gray-200 p-3 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <img src="../assets/logo-company.jpg" alt="Company Logo" class="w-10 h-10 rounded-full">
+            <span class="font-bold text-lg text-green-500">Sử Ký <span class="text-white">Đất Việt</span></span>
+        </div>
+        <nav>
+            <ul class="flex gap-4">
+                <li><a href="../index.html" class="hover:text-orange-400">Trang chủ</a></li>
+                <li><a href="../questions/index.html" class="hover:text-orange-400">Thư viện câu hỏi</a></li>
+                <li><a href="index.html" class="hover:text-orange-400">Thư viện nhân vật</a></li>
+                <li><a href="../products/index.html" class="hover:text-orange-400">Sản phẩm</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container mx-auto px-4 py-8">
+        <h2 id="characterName" class="text-3xl font-bold text-orange-500 text-center mb-6"></h2>
+        <img id="characterImage" src="" alt="Hình ảnh nhân vật" class="w-full h-auto rounded mb-6">
+        <p id="characterDescription" class="text-lg"></p>
+        <button onclick="playAudio()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mt-6">
+            Nghe âm thanh
+        </button>
+        <audio id="characterAudio"></audio>
+        <div id="characterVideo" class="mt-6 hidden">
+            <video controls class="w-full">
+                <source id="videoSource" src="" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const characterId = urlParams.get('id');
+
+        fetch('characters.json')
+            .then(response => response.json())
+            .then(data => {
+                const character = data.find(c => c.id === characterId);
+                document.getElementById('characterName').textContent = character.name;
+                document.getElementById('characterImage').src = character.image;
+                document.getElementById('characterDescription').textContent = character.description;
+                document.getElementById('characterAudio').src = character.audio;
+                if (character.video) {
+                    document.getElementById('characterVideo').classList.remove('hidden');
+                    document.getElementById('videoSource').src = character.video;
+                }
+            });
+
+        function playAudio() {
+            const audio = document.getElementById('characterAudio');
+            audio.paused ? audio.play() : audio.pause();
+        }
+    </script>
+</body>
+</html>

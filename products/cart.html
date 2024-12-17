@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - Sử Ký Đất Việt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <header class="bg-black text-gray-200 p-3 flex justify-between items-center">
+        <h1 class="font-bold text-lg text-green-500">Sử Ký <span class="text-white">Đất Việt</span></h1>
+        <a href="index.html" class="hover:text-orange-400">Quay lại cửa hàng</a>
+    </header>
+
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-orange-500 text-center mb-6">Giỏ hàng</h1>
+        <ul id="cartItems" class="space-y-4"></ul>
+        <button onclick="checkout()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mt-6">
+            Thanh toán
+        </button>
+    </div>
+
+    <script>
+        fetch('products.json')
+            .then(response => response.json())
+            .then(products => {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartItems = document.getElementById('cartItems');
+                cartItems.innerHTML = cart.map(id => {
+                    const product = products.find(p => p.id === id);
+                    return `
+                        <li class="bg-gray-800 p-4 rounded shadow">
+                            <h3 class="font-bold">${product.name}</h3>
+                            <p>Giá: ${product.price} VNĐ</p>
+                        </li>
+                    `;
+                }).join('');
+            });
+
+        function checkout() {
+            window.location.href = 'checkout.html';
+        }
+    </script>
+</body>
+</html>
